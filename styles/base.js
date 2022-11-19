@@ -22,7 +22,7 @@ const buttons = StyleSheet.create({
 })
 
 const loginStyle = StyleSheet.create({
-  panel:{
+  panel: {
     backgroundColor: '#ffffff',
   },
   logo: {
@@ -30,10 +30,10 @@ const loginStyle = StyleSheet.create({
     width: '100%'
   },
   button: {
-    backgroundColor: '#fee2cd',
+    backgroundColor: '#ca2039',
   },
   loginText: {
-    color: '#544b44'
+    color: '#ffffff'
   }
 })
 const leaderboardStyle = StyleSheet.create({

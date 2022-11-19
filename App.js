@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { styles } from './styles/base.js';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Platform, View } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import keys from './constants/Keys';
 import Parse from "parse/react-native.js";
-import { Menu, BottomNavigation, Text} from 'react-native-paper';
+import { Menu, BottomNavigation, Text } from 'react-native-paper';
 import { LeaderboardRoute } from './scenes/leaderboard.js';
 import { QuizesRoute } from './scenes/quizes';
 import { SettingsRoute } from './scenes/settings';
@@ -22,46 +22,46 @@ const theme = {
   myOwnProperty: true,
   // Specify custom property in nested object
   "colors": {
-    "primary": "rgb(142, 78, 0)",
+    "primary": "rgb(187, 17, 48)",
     "onPrimary": "rgb(255, 255, 255)",
-    "primaryContainer": "rgb(255, 220, 193)",
-    "onPrimaryContainer": "rgb(46, 21, 0)",
-    "secondary": "rgb(115, 89, 67)",
+    "primaryContainer": "rgb(255, 218, 217)",
+    "onPrimaryContainer": "rgb(64, 0, 9)",
+    "secondary": "rgb(119, 86, 86)",
     "onSecondary": "rgb(255, 255, 255)",
-    "secondaryContainer": "rgb(255, 220, 193)",
-    "onSecondaryContainer": "rgb(42, 23, 6)",
-    "tertiary": "rgb(90, 98, 56)",
+    "secondaryContainer": "rgb(255, 218, 217)",
+    "onSecondaryContainer": "rgb(44, 21, 21)",
+    "tertiary": "rgb(117, 90, 47)",
     "onTertiary": "rgb(255, 255, 255)",
-    "tertiaryContainer": "rgb(223, 232, 178)",
-    "onTertiaryContainer": "rgb(24, 30, 0)",
+    "tertiaryContainer": "rgb(255, 222, 174)",
+    "onTertiaryContainer": "rgb(40, 25, 0)",
     "error": "rgb(186, 26, 26)",
     "onError": "rgb(255, 255, 255)",
     "errorContainer": "rgb(255, 218, 214)",
     "onErrorContainer": "rgb(65, 0, 2)",
     "background": "rgb(255, 251, 255)",
-    "onBackground": "rgb(32, 27, 23)",
+    "onBackground": "rgb(32, 26, 26)",
     "surface": "rgb(255, 251, 255)",
-    "onSurface": "rgb(32, 27, 23)",
-    "surfaceVariant": "rgb(242, 223, 209)",
-    "onSurfaceVariant": "rgb(81, 68, 58)",
-    "outline": "rgb(131, 116, 105)",
-    "outlineVariant": "rgb(214, 195, 182)",
+    "onSurface": "rgb(32, 26, 26)",
+    "surfaceVariant": "rgb(244, 221, 220)",
+    "onSurfaceVariant": "rgb(82, 67, 67)",
+    "outline": "rgb(133, 115, 114)",
+    "outlineVariant": "rgb(215, 193, 193)",
     "shadow": "rgb(0, 0, 0)",
     "scrim": "rgb(0, 0, 0)",
-    "inverseSurface": "rgb(53, 47, 43)",
-    "inverseOnSurface": "rgb(250, 239, 232)",
-    "inversePrimary": "rgb(255, 183, 120)",
+    "inverseSurface": "rgb(54, 47, 46)",
+    "inverseOnSurface": "rgb(251, 238, 237)",
+    "inversePrimary": "rgb(255, 179, 179)",
     "elevation": {
       "level0": "transparent",
-      "level1": "rgb(249, 242, 242)",
-      "level2": "rgb(246, 237, 235)",
-      "level3": "rgb(243, 232, 227)",
-      "level4": "rgb(241, 230, 224)",
-      "level5": "rgb(239, 227, 219)"
+      "level1": "rgb(252, 239, 245)",
+      "level2": "rgb(250, 232, 238)",
+      "level3": "rgb(248, 225, 232)",
+      "level4": "rgb(247, 223, 230)",
+      "level5": "rgb(246, 218, 226)"
     },
-    "surfaceDisabled": "rgba(32, 27, 23, 0.12)",
-    "onSurfaceDisabled": "rgba(32, 27, 23, 0.38)",
-    "backdrop": "rgba(58, 46, 37, 0.4)"
+    "surfaceDisabled": "rgba(32, 26, 26, 0.12)",
+    "onSurfaceDisabled": "rgba(32, 26, 26, 0.38)",
+    "backdrop": "rgba(59, 45, 45, 0.4)"
   }
 };
 
@@ -69,7 +69,7 @@ export default function App() {
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'ranking', title: 'Leaderboard', focusedIcon: 'trophy', unfocusedIcon: 'trophy-outline'},
+    { key: 'ranking', title: 'Leaderboard', focusedIcon: 'trophy', unfocusedIcon: 'trophy-outline' },
     { key: 'quizes', title: 'Quizzes', focusedIcon: 'brain' },
     { key: 'settings', title: 'Settings', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
   ]);
@@ -86,9 +86,9 @@ export default function App() {
     const createInstallation = async () => {
       const Installation = Parse.Object.extend(Parse.Installation);
       const installation = new Installation();
-  
+
       installation.set("deviceType", Platform.OS);
-  
+
       await installation.save();
     }
 
@@ -97,12 +97,12 @@ export default function App() {
 
   return (
     <PaperProvider theme={theme}>
-      <LoginScene/>
+      <LoginScene />
       <BottomNavigation
-          navigationState={{ index, routes }}
-          onIndexChange={setIndex}
-          renderScene={renderScene}
-          />
+        navigationState={{ index, routes }}
+        onIndexChange={setIndex}
+        renderScene={renderScene}
+      />
     </PaperProvider>
   );
 }
