@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { IconButton, MD3Colors } from 'react-native-paper';
 import { leaderboardStyle } from "../styles/base";
-import { client } from '../mariadbendpoint/client';
+import { useClient } from '../mariadbendpoint/client';
+
 
 const User = ({ name, points }) => (
     <View style={leaderboardStyle.item}>
@@ -13,6 +14,8 @@ const User = ({ name, points }) => (
 );
 
 
+
+
 export const LeaderboardRoute = () => {
     const renderUser = ({ item }) => (
         <User
@@ -21,7 +24,10 @@ export const LeaderboardRoute = () => {
         />
     );
 
-    data = client('leaderboard');
+    const data = useClient('leaderboard');
+
+
+
 
     return (
         <ScrollView style={leaderboardStyle.container}>
