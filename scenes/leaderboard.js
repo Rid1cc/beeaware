@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ScrollView, FlatList } from 'react-native';
+import { View, ScrollView, FlatList } from 'react-native';
 import { IconButton, MD3Colors } from 'react-native-paper';
 import { leaderboardStyle } from "../styles/base";
 import { useClient } from '../mariadbendpoint/client';
@@ -8,11 +8,11 @@ import { StyleSheet } from 'react-native';
 
 
 const User = ({ name, points }) => (
-    <View style={leaderboardStyle.item}>
+    <Surface style={leaderboardStyle.item}>
         <Text style={leaderboardStyle.subtitle}>
             {name}: {points}
         </Text>
-    </View>
+    </Surface>
 );
 
 

@@ -42,17 +42,15 @@ const leaderboardStyle = StyleSheet.create({
   },
   item: {
     padding: 10,
+    backgroundColor: '#ca2039',
     marginVertical: 8,
     marginHorizontal: 16,
-    backgroundColor: '#DCDCDC',
-    borderWidth: 3,
-    borderColor: '#D3D3D3',
-    borderRadius: 30,
+    borderRadius: 10,
   },
   subtitle: {
+    color: '#ffffff',
     fontSize: 30,
     flex: 1,
-    color: '#A9A9A9',
     textAlign: "center",
     fontWeight: "bold"
   },
@@ -62,13 +60,15 @@ const leaderboardStyle = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
-    color: 'grey'
+    color: '#ca2039'
   },
   icon: {
     marginVertical: 8,
     width: 200,
     height: 200,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    color: '#ca2039',
+    borderRadius: 10,
   }
 })
 

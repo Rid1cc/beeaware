@@ -28,7 +28,7 @@ const theme = {
     "onPrimaryContainer": "rgb(64, 0, 9)",
     "secondary": "rgb(119, 86, 86)",
     "onSecondary": "rgb(255, 255, 255)",
-    "secondaryContainer": "rgb(255, 218, 217)",
+    "secondaryContainer": "rgb(64, 0, 9)",
     "onSecondaryContainer": "rgb(44, 21, 21)",
     "tertiary": "rgb(117, 90, 47)",
     "onTertiary": "rgb(255, 255, 255)",
@@ -102,6 +102,9 @@ export default function App() {
         navigationState={{ index, routes }}
         onIndexChange={setIndex}
         renderScene={renderScene}
+        activeColor={'#ffffff'}
+        inactiveColor={'#ffffff'}
+        barStyle={{ backgroundColor: 'rgb(187, 17, 48)'}}
       />
     </PaperProvider>
   );
