@@ -62,7 +62,7 @@ const leaderboardStyle = StyleSheet.create({
     padding: 10,
     backgroundColor: '#ca2039',
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 15,
     borderRadius: 10,
   },
   subtitle: {
@@ -84,7 +84,6 @@ const leaderboardStyle = StyleSheet.create({
     width: 200,
     height: 200,
     alignSelf: 'center',
-    color: '#ca2039',
     borderRadius: 10,
   }
 })
