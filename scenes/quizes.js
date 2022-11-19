@@ -1,37 +1,32 @@
-import React from "react";
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
-import { quizesStyles } from '../styles/base.js';
-// hours spent to debug this shit - 0.5
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Daily Quiz',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Monthly Quiz',
-  },
-];
-
-const Item = ({ title }) => (
-  <View style={quizesStyles.item}>
-    <Text style={quizesStyles.title}>{title}</Text>
-  </View>
-);
+import * as React from 'react';
+import { Modal, Portal, Text, Button, Provider, IconButton, View } from 'react-native-paper';
+import { leaderboardStyle, quizesLayout } from '../styles/base';
 
 export const QuizesRoute = () => {
-  const renderItem = ({ item }) => (
-    <Item title={item.title} />
-  );
+  const [visible, setVisible] = React.useState(false);
+
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+  const containerStyle = { backgroundColor: '#ffffff', width: '100%', height: '100%', padding: '20%' };
 
   return (
-    <SafeAreaView style={quizesStyles.container}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
+    <Provider style={leaderboardStyle.container}>
+      <IconButton
+        icon="brain"
+        style={leaderboardStyle.icon}
+        size={150}
+        disabled={true}
       />
-    </SafeAreaView>
+      <Text style={leaderboardStyle.title}>Quizzes</Text>
+      <Portal>
+        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
+          <Text>Example Modal.  Click outside this area to dismiss.</Text>
+        </Modal>
+      </Portal>
+      <Button onPress={showModal} style={quizesLayout.item}> <Text style={quizesLayout.subtitle}>Daily Quiz</Text>
+      </Button>
+      <Button onPress={showModal} style={quizesLayout.item}> <Text style={quizesLayout.subtitle}>Monthly Quiz</Text>
+      </Button>
+    </Provider>
   );
-}
-
+};
