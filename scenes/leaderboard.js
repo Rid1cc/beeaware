@@ -3,6 +3,8 @@ import { View, Text, ScrollView, FlatList } from 'react-native';
 import { IconButton, MD3Colors } from 'react-native-paper';
 import { leaderboardStyle } from "../styles/base";
 import { useClient } from '../mariadbendpoint/client';
+import { Surface, Text } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
 
 
 const User = ({ name, points }) => (
