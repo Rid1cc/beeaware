@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Modal, Portal, Text, Button, Provider, IconButton, View } from 'react-native-paper';
 import { leaderboardStyle, quizesLayout } from '../styles/base';
+import { QuestionsRoute } from './question';
 
 export const QuizesRoute = () => {
   const [visible, setVisible] = React.useState(false);
@@ -20,7 +21,7 @@ export const QuizesRoute = () => {
       <Text style={leaderboardStyle.title}>Quizzes</Text>
       <Portal>
         <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-          <Text>Example Modal.  Click outside this area to dismiss.</Text>
+          {/*<QuestionsRoute/>*/}
         </Modal>
       </Portal>
       <Button onPress={showModal} style={quizesLayout.item}> <Text style={quizesLayout.subtitle}>Daily Quiz</Text>
