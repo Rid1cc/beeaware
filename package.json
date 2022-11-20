@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdi/font": "^7.0.96",
     "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-module/get-random-values": "^1.8.4",
     "@react-navigation/native": "^6.0.13",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
@@ -24,15 +25,16 @@
     "react-native-login-screen": "^4.2.0",
     "react-native-navigation": "^7.30.2",
     "react-native-paper": "^5.0.0-rc.10",
+    "react-native-react-native-quiz-single-choice": "^1.0.3",
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-screens": "~2.15.2",
     "react-native-stack": "^1.0.0-alpha11",
     "react-native-text-input-interactive": "^0.1.4",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "^0.13.18",
     "react-native-webview": "11.0.0",
     "react-router-native": "^6.4.3",
-    "yarn": "^1.22.19",
-    "react-native-screens": "~2.15.2",
-    "react-native-safe-area-context": "3.1.9"
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

@@ -11,7 +11,7 @@ import { QuizesRoute } from './scenes/quizes';
 import { SettingsRoute } from './scenes/settings';
 import { Provider as PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper';
 import { LoginScene } from './scenes/login';
-import { ForumRoute } from './scenes/forum'
+import { ForumRoute } from './scenes/forum';
 
 Parse.setAsyncStorage(AsyncStorage);
 Parse.initialize(keys.applicationId, keys.javascriptKey);
