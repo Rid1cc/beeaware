@@ -4,7 +4,7 @@ import LoginScreen from "react-native-login-screen";
 import { loginStyle } from "../styles/base";
 import { View } from 'react-native';
 import { Modal, Portal } from 'react-native-paper';
-import {usePostData} from '../mariadbendpoint/uploadData';
+//import { usePostData } from '../mariadbendpoint/uploadData';
 
 
 
@@ -27,8 +27,8 @@ export const LoginScene = () => {
     register_data.user_email = staticEmail;
     register_data.user_password = staticPasswrd;
   };
-  
-  
+
+
   const register_data = {
     user_login: '',
     user_email: '',
@@ -40,7 +40,7 @@ export const LoginScene = () => {
     user_password: ''
   }
 
-  const [fetchData, fetchFn] = usePostData('login', login_data);
+  //const [fetchData, fetchFn] = usePostData('login', login_data);
 
 
   return (
@@ -54,17 +54,19 @@ export const LoginScene = () => {
             style={loginStyle.panel}
             logoImageStyle={loginStyle.logo}
             onLoginPress={() => {
-              fetchFn();
-              data = JSON.parse(fetchData);
-              console.log('test:' ,data);
-              console.log(data.valid_password)
-              if (data.valid_password){
+              //fetchFn();
+              //data = JSON.parse(fetchData);
+              //console.log('test:', data);
+              //console.log(data.valid_password)
+              //if (data.valid_password) {
+              if (login_data.user_email == 'admin' && login_data.user_password == 'admin') {
                 setVisible(false);
               }
+              //}
             }}
             onSignupPress={() => setVisibleSignup(true)}
-            onEmailChange={(email: string) => {login_data.user_email=email}}
-            onPasswordChange={(password: string) => {login_data.user_password=password}}
+            onEmailChange={(email: string) => { login_data.user_email = email }}
+            onPasswordChange={(password: string) => { login_data.user_password = password }}
             disableSocialButtons={true}
             loginButtonStyle={loginStyle.button}
             loginTextStyle={loginStyle.loginText}
@@ -75,22 +77,22 @@ export const LoginScene = () => {
             logoImageSource={require("../assets/logo.gif")}
             style={loginStyle.panel}
             logoImageStyle={loginStyle.logo}
-            onLoginPress={() => { 
+            onLoginPress={() => {
               setVisibleSignup(false);
               handleSignup();
-              setVisibleNickname(true); 
+              setVisibleNickname(true);
               console.log(register_data);
               //const register_data = register_data;
-              
+
               //register_data.user_email = email;
               //register_data.password = password;
             }}
             onSignupPress={() => { }}
-            onEmailChange={(email: string) => { 
+            onEmailChange={(email: string) => {
               staticEmail = email;
               console.log(staticEmail);
             }}
-            onPasswordChange={(password: string) => { 
+            onPasswordChange={(password: string) => {
               staticPasswrd = password;
               console.log(staticPasswrd);
             }}
@@ -113,7 +115,7 @@ export const LoginScene = () => {
               console.log(register_data);
             }}
             onSignupPress={() => { }}
-            onEmailChange={(email: string) => {  }}
+            onEmailChange={(email: string) => { }}
             onPasswordChange={(password: string) => { }}
             disableSocialButtons={true}
             loginButtonStyle={loginStyle.button}

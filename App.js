@@ -71,11 +71,11 @@ export default function App() {
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'ranking', title: 'Leaderboard', focusedIcon: 'trophy', unfocusedIcon: 'trophy-outline' },
     { key: 'quizes', title: 'Quizzes', focusedIcon: 'brain' },
+    { key: 'ranking', title: 'Leaderboard', focusedIcon: 'trophy', unfocusedIcon: 'trophy-outline' },
     { key: 'settings', title: 'Settings', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
-<<<<<<< HEAD
-    { key: 'watercounter', title: 'Watercounter', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
+    { key: 'watercounter', title: 'Watercounter', focusedIcon: 'water', unfocusedIcon: 'water-outline' },
+    { key: 'forums', title: 'Forum', focusedIcon: 'account-multiple' },
 
   ]);
 
