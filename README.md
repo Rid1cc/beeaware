@@ -40,5 +40,5 @@ Run
 
 
 **Login and Password for app login screen
-login: admin
-password: admin
+- login: admin
+- password: admin
