@@ -4,6 +4,7 @@ import LoginScreen from "react-native-login-screen";
 import { loginStyle } from "../styles/base";
 import { View } from 'react-native';
 import { Modal, Portal } from 'react-native-paper';
+import {usePostData} from '../mariadbendpoint/uploadData';
 
 
 
@@ -19,6 +20,29 @@ export const LoginScene = () => {
   const hideModalNickname = () => setVisibleNickname(false);
   const containerStyle = { backgroundColor: '#ffffff', width: '100%', height: '100%' };
 
+  var staticEmail = '';
+  var staticPasswrd = '';
+
+  const handleSignup = () => {
+    register_data.user_email = staticEmail;
+    register_data.user_password = staticPasswrd;
+  };
+  
+  
+  const register_data = {
+    user_login: '',
+    user_email: '',
+    user_password: '',
+  }
+
+  const login_data = {
+    user_email: '',
+    user_password: ''
+  }
+
+  const [fetchData, fetchFn] = usePostData('login', login_data);
+
+
   return (
     <View>
       {/*Here we will return the view when state is true 
@@ -29,10 +53,18 @@ export const LoginScene = () => {
             logoImageSource={require("../assets/logo.gif")}
             style={loginStyle.panel}
             logoImageStyle={loginStyle.logo}
-            onLoginPress={() => setVisible(false)}
+            onLoginPress={() => {
+              fetchFn();
+              data = JSON.parse(fetchData);
+              console.log('test:' ,data);
+              console.log(data.valid_password)
+              if (data.valid_password){
+                setVisible(false);
+              }
+            }}
             onSignupPress={() => setVisibleSignup(true)}
-            onEmailChange={(email: string) => { }}
-            onPasswordChange={(password: string) => { }}
+            onEmailChange={(email: string) => {login_data.user_email=email}}
+            onPasswordChange={(password: string) => {login_data.user_password=password}}
             disableSocialButtons={true}
             loginButtonStyle={loginStyle.button}
             loginTextStyle={loginStyle.loginText}
@@ -43,10 +75,25 @@ export const LoginScene = () => {
             logoImageSource={require("../assets/logo.gif")}
             style={loginStyle.panel}
             logoImageStyle={loginStyle.logo}
-            onLoginPress={() => { setVisibleSignup(false), setVisibleNickname(true) }}
+            onLoginPress={() => { 
+              setVisibleSignup(false);
+              handleSignup();
+              setVisibleNickname(true); 
+              console.log(register_data);
+              //const register_data = register_data;
+              
+              //register_data.user_email = email;
+              //register_data.password = password;
+            }}
             onSignupPress={() => { }}
-            onEmailChange={(email: string) => { }}
-            onPasswordChange={(password: string) => { }}
+            onEmailChange={(email: string) => { 
+              staticEmail = email;
+              console.log(staticEmail);
+            }}
+            onPasswordChange={(password: string) => { 
+              staticPasswrd = password;
+              console.log(staticPasswrd);
+            }}
             disableSocialButtons={true}
             loginButtonStyle={loginStyle.button}
             loginTextStyle={loginStyle.loginText}
@@ -60,9 +107,13 @@ export const LoginScene = () => {
             logoImageSource={require("../assets/logo.gif")}
             style={loginStyle.panel}
             logoImageStyle={loginStyle.logo}
-            onLoginPress={() => setVisibleNickname(false)}
+            onLoginPress={() => {
+              //let new_data;
+              setVisibleNickname(false);
+              console.log(register_data);
+            }}
             onSignupPress={() => { }}
-            onEmailChange={(email: string) => { }}
+            onEmailChange={(email: string) => {  }}
             onPasswordChange={(password: string) => { }}
             disableSocialButtons={true}
             loginButtonStyle={loginStyle.button}

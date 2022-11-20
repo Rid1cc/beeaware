@@ -9,6 +9,7 @@ import { Menu, BottomNavigation, Text } from 'react-native-paper';
 import { LeaderboardRoute } from './scenes/leaderboard.js';
 import { QuizesRoute } from './scenes/quizes';
 import { SettingsRoute } from './scenes/settings';
+import { WaterCounterRoute } from './scenes/watercounter';
 import { Provider as PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper';
 import { LoginScene } from './scenes/login';
 import { ForumRoute } from './scenes/forum';
@@ -73,7 +74,8 @@ export default function App() {
     { key: 'ranking', title: 'Leaderboard', focusedIcon: 'trophy', unfocusedIcon: 'trophy-outline' },
     { key: 'quizes', title: 'Quizzes', focusedIcon: 'brain' },
     { key: 'settings', title: 'Settings', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
-    { key: 'forums', title: 'Forum', focusedIcon: 'user', unfocusedIcon: 'user' },
+<<<<<<< HEAD
+    { key: 'watercounter', title: 'Watercounter', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
 
   ]);
 
@@ -82,6 +84,7 @@ export default function App() {
     quizes: QuizesRoute,
     settings: SettingsRoute,
     forums: ForumRoute,
+    watercounter: WaterCounterRoute,
   });
 
 
