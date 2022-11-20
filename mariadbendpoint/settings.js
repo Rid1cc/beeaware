@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-export function useSettings(api: string) {
-  const [data, setData] = useState([]);
 
+export function useSettings(api: string) {
+  const [data, setData] = useState();
   useEffect(() => {
     fetch('http://51.137.122.136:1337/' + api)
       .then((response) => response.json())
@@ -10,6 +10,6 @@ export function useSettings(api: string) {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
-  console.log(data)
+  //console.log('data:', data[0])
   return data;
 }

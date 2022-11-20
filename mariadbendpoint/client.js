@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 export function useClient(api: string) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(['dtstr']);
 
   useEffect(() => {
     fetch('http://51.137.122.136:1337/' + api)
@@ -10,6 +10,6 @@ export function useClient(api: string) {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
-  
+  console.log('data:', data[0]);
   return data;
 }

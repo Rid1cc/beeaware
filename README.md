@@ -1,11 +1,10 @@
 
-# Edu2Grow (temporary)
+# Beeware by TheprOgrammingProjectG
 
-Mobile app that helps people to learn about ... (wip)
-
-
+Mobile app that helps people to learn about sustainable development by quizzes.
 
 
+--------------------------------------------------------------
 ## Dependencies
 Node ver. 16.18.1
 ## Running on web server

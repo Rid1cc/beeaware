@@ -36,6 +36,24 @@ const loginStyle = StyleSheet.create({
     color: '#ffffff'
   }
 })
+const quizesLayout = StyleSheet.create({
+  item: {
+    padding: 20,
+    backgroundColor: '#ca2039',
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 10,
+    lineHeight: 0,
+
+  },
+  subtitle: {
+    color: '#ffffff',
+    fontSize: 20,
+    height: 30,
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+})
 const leaderboardStyle = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,9 +68,9 @@ const leaderboardStyle = StyleSheet.create({
   subtitle: {
     color: '#ffffff',
     fontSize: 30,
-    flex: 1,
     textAlign: "center",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    zIndex: 1,
   },
   title: {
     fontSize: 30,
@@ -86,4 +104,4 @@ const quizesStyles = StyleSheet.create({
   },
 });
 
-export { styles, buttons, loginStyle, quizesStyles, leaderboardStyle }
+export { styles, buttons, loginStyle, quizesStyles, leaderboardStyle, quizesLayout }
