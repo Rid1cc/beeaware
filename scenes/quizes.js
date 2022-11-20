@@ -7,9 +7,14 @@ import QuizeSingleChoice from "react-native-react-native-quiz-single-choice";
 
 export const QuizesRoute = () => {
   const [visible, setVisible] = React.useState(false);
+  const [visibleScore, setVisibleScore] = React.useState(false);
 
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
+
+  const showScore = () => setVisibleScore(true);
+  const hideScore = () => setVisibleScore(false);
+
   const containerStyle = { backgroundColor: '#ffffff', width: '100%', height: '100%' };
 
   const t_data = useSettings('questions');
@@ -99,6 +104,7 @@ export const QuizesRoute = () => {
           />
 
         </Modal>
+        <Modal visible={visibleScore} style={{height: '50%', width: '50%'}}><Text>CONGRATS you scored {}</Text></Modal>
       </Portal>
       <Button onPress={showModal} style={quizesLayout.item}> <Text style={quizesLayout.subtitle}>Daily Quiz</Text>
       </Button>
