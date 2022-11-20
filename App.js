@@ -76,9 +76,6 @@ export default function App() {
     { key: 'settings', title: 'Settings', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
 <<<<<<< HEAD
     { key: 'watercounter', title: 'Watercounter', focusedIcon: 'wrench', unfocusedIcon: 'wrench-outline' },
-=======
-    { key: 'forums', title: 'Forum', focusedIcon: 'user', unfocusedIcon: 'user' },
->>>>>>> 364d435b97a0594b9f1209f4b871a1d89c52207a
 
   ]);
 
@@ -86,11 +83,8 @@ export default function App() {
     ranking: LeaderboardRoute,
     quizes: QuizesRoute,
     settings: SettingsRoute,
-<<<<<<< HEAD
-    watercounter: WaterCounterRoute,
-=======
     forums: ForumRoute,
->>>>>>> 364d435b97a0594b9f1209f4b871a1d89c52207a
+    watercounter: WaterCounterRoute,
   });
 
 
