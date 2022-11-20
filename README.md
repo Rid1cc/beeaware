@@ -39,6 +39,6 @@ Run
 <sup>and select your sdk</sup>
 
 
-**Login and Password for app login screen
+## Login and Password for app login screen
 - login: admin
 - password: admin
